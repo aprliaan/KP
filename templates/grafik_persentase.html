@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grafik Presentasi</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            color: #333;
+        }
+        img {
+            max-width: 80%;
+            height: auto;
+            margin: 20px 0;
+        }
+        .container {
+            margin: auto;
+            max-width: 1000px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Grafik Presentasi</h1>
+
+        <h2>Jumlah Data Kosong di Setiap Kolom</h2>
+        <img src="{{ url_for('static', filename=missing_data_plot) }}" alt="Jumlah Data Kosong">
+
+       
+        <h2>Distribusi Perusahaan</h2>
+        <img src="{{ url_for('static', filename=perusahaan_plot) }}" alt="Distribusi Perusahaan">
+
+        <h2>Distribusi Cost Center</h2>
+        <img src="{{ url_for('static', filename=cost_center_plot) }}" alt="Distribusi Cost Center">
+
+        <h2>Persentase Jumlah Data per Fungsi</h2>
+        <img src="{{ url_for('static', filename=fungsi_plot) }}" alt="Persentase Jumlah Data per Fungsi">
+
+        <a href="/">Kembali ke Beranda</a>
+    </div>
+</body>
+</html>

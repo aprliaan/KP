@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perbedaan Site Group</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            color: #333;
+        }
+        table {
+            width: 80%;
+            margin: 0 auto;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+    </style>
+</head>
+<body>
+    <h1>Perbedaan Site Group</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>site Group</th>
+                <th>Site Group</th>
+                <th>Hasil</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in output %}
+            <tr>
+                <td>{{ row['site Group'] }}</td>
+                <td>{{ row['Site Group'] }}</td>
+                <td>{{ row['cek site group'] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="/">Kembali ke Beranda</a>
+</body>
+</html>

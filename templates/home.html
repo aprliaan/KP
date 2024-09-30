@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Data</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+        }
+        nav {
+            background-color: #333;
+            padding: 10px;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        h1 {
+            color: #333;
+        }
+        table {
+            width: 80%;
+            margin: 0 auto;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+    </style>
+</head>
+<body>
+    <!-- Menu Navigasi -->
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/grafik_persentase">Grafik Persentase</a></li>
+            <li><a href="/perbedaan_fungsi_department">Perbedaan Fungsi dan Department</a></li>
+            <li><a href="/perbedaan_nama_requester_customer">Perbedaan Nama Requester dan Customer</a></li>
+            <li><a href="/perbedaan_perusahaan_requestor_company">Perbedaan Perusahaan dan Requestor Company</a></li>
+            <li><a href="/perbedaan_site">Perbedaan Site</a></li>
+            <li><a href="/perbedaan_site_group">Perbedaan Site Group</a></li>
+        </ul>
+    </nav>
+
+    <h1>Dashboard Data</h1>
+
+    <h2>Jumlah Data Kosong di Setiap Kolom</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Kolom</th>
+                <th>Jumlah Data Kosong</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for key, value in missing_data_count.items() %}
+            <tr>
+                <td>{{ key }}</td>
+                <td>{{ value }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <h2>Frekuensi Cost Center</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Cost Center</th>
+                <th>Jumlah</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for key, value in cost_center_counts.items() %}
+            <tr>
+                <td>{{ key }}</td>
+                <td>{{ value }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <h2>Frekuensi Perusahaan</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Perusahaan</th>
+                <th>Jumlah</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for key, value in perusahaan_counts.items() %}
+            <tr>
+                <td>{{ key }}</td>
+                <td>{{ value }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <h2>Frekuensi Job Title</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Job Title</th>
+                <th>Jumlah</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for key, value in job_title_counts.items() %}
+            <tr>
+                <td>{{ key }}</td>
+                <td>{{ value }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <h2>Frekuensi Nama Requester</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Nama Requester</th>
+                <th>Jumlah</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for key, value in nama_requester_counts.items() %}
+            <tr>
+                <td>{{ key }}</td>
+                <td>{{ value }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <h2>Frekuensi Fungsi (Top 5)</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Fungsi</th>
+                <th>Jumlah</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for key, value in fungsi_counts.items() %}
+            <tr>
+                <td>{{ key }}</td>
+                <td>{{ value }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="/">Kembali ke Beranda</a>
+</body>
+</html>
